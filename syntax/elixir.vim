@@ -27,8 +27,8 @@ syn match elixirFloat   "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<\%(0\|[1-9]\d*\%(_\d\
 " Used in binaries
 syn keyword elixirType               float
 
-syn match Comment                    /%.*$/ contains=@Spell,erlangTodo
-"syn keyword elixirKeyword            def end module
+syn match Comment                    "#.*" contains=@Spell,erlangTodo
+syn keyword elixirKeyword            def defp defmacro end defmodule use
 "syn match Keyword                    /module .*$/
 
 "syn keyword elixirConditional        case match else if elsif end
@@ -73,8 +73,6 @@ syn region elixirString              start=/"/ end=/"/ skip=/\\/ contains=@Spell
 
 syn match elixirAtom                 /'\h\w*/
 syn match elixirAtom                 /'".*"/
-
-syn match elixirBlankSlate           /#\w*/
 
 hi link elixirString         String
 hi link elixirInteger        Number
