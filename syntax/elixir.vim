@@ -24,12 +24,19 @@ syn match elixirInteger "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<0[bB][01]\+\%(_[01]\+
 syn match elixirFloat   "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<\%(0\|[1-9]\d*\%(_\d\+\)*\)\.\d\+\%(_\d\+\)*\>"					display
 syn match elixirFloat   "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<\%(0\|[1-9]\d*\%(_\d\+\)*\)\%(\.\d\+\%(_\d\+\)*\)\=\%([eE][-+]\=\d\+\%(_\d\+\)*\)\>"	display
 
+syn match elixirModule  /[A-Z][A-Za-z]*/
+
+syn match elixirTuple                        /{\|}/
+syn match elixirList                         /\[\|\]/
+
 " Used in binaries
 syn keyword elixirType               float
 
 syn match Comment                    /%.*$/ contains=@Spell,erlangTodo
 "syn keyword elixirKeyword            def end module
 "syn match Keyword                    /module .*$/
+"
+syn match elixirChar                  /\$[\\]\+./
 
 "syn keyword elixirConditional        case match else if elsif end
 "syn keyword elixirConditional        not and or andalso orelse
@@ -71,7 +78,7 @@ syn match elixirStringModifier       /\\./ contained
 syn match elixirStringModifier       /\~\%(-\?[0-9*]\+\)\?\%(\.[0-9*]\+\..\?\)\?\%(c\|f\|e\|g\|s\|w\|p\|W\|P\|B\|X\|#\|b\|+\|n\|i\)/ contained
 syn region elixirString              start=/"/ end=/"/ skip=/\\/ contains=@Spell,elixirStringModifier,elixirInterpolation
 
-syn match elixirAtom                 /'\h\w*/
+syn match elixirAtom                 /'\h[A-Za-z0-9?!_]*/
 syn match elixirAtom                 /'".*"/
 
 syn match elixirBlankSlate           /#\w*/
@@ -80,7 +87,8 @@ hi link elixirString         String
 hi link elixirInteger        Number
 hi link elixirFloat          Float
 hi link elixirBoolean        Boolean
-hi link elixirAtom           Special
+hi link elixirAtom           Constant
+hi link elixirChar           Character
 
 hi link elixirConditional    Conditional
 hi link elixirMemberVariable Special
@@ -95,4 +103,7 @@ hi link elixirBound          Special
 
 hi link elixirType           Type
 hi link elixirControl        Statement
+hi link elixirModule         Structure
 
+hi link elixirTuple          Delimiter  
+hi link elixirList           Delimiter  
