@@ -32,8 +32,8 @@ syn match elixirList                         /\[\|\]/
 " Used in binaries
 syn keyword elixirType               float
 
-syn match Comment                    /%.*$/ contains=@Spell,erlangTodo
-"syn keyword elixirKeyword            def end module
+syn match Comment                    "#.*" contains=@Spell,erlangTodo
+syn keyword elixirKeyword            def defp defmacro end defmodule use
 "syn match Keyword                    /module .*$/
 "
 syn match elixirChar                  /\$[\\]\+./
@@ -80,8 +80,6 @@ syn region elixirString              start=/"/ end=/"/ skip=/\\/ contains=@Spell
 
 syn match elixirAtom                 /'\h[A-Za-z0-9?!_]*/
 syn match elixirAtom                 /'".*"/
-
-syn match elixirBlankSlate           /#\w*/
 
 hi link elixirString         String
 hi link elixirInteger        Number
