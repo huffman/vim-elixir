@@ -36,7 +36,7 @@ syn match Comment                    "#.*" contains=@Spell,erlangTodo
 syn keyword elixirKeyword            def defp defmacro end defmodule use
 "syn match Keyword                    /module .*$/
 "
-syn match elixirChar                  /\$[\\]\+./
+syn match elixirChar                 /?\\\?./
 
 "syn keyword elixirConditional        case match else if elsif end
 "syn keyword elixirConditional        not and or andalso orelse
