@@ -33,7 +33,7 @@ syn keyword elixirType               float
 syn match Comment                    "#.*" contains=@Spell,erlangTodo
 syn keyword elixirKeyword            def defp defmacro end defmodule use defrecord nextgroup=elixirFunction skipwhite
 
-syn match elixirFunction             \ "\%(\%(def\s\|defp\s\)\s*\)\@<=\h\%(\w\|\.\)*" contained
+syn match elixirFunction "\%(\%(def\s\|defp\s\)\s*\)\@<=\h\%(\w\|\.\)*" contained
 
 syn match elixirChar                 /?\\\?./
 
