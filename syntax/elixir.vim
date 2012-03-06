@@ -65,7 +65,7 @@ syn match  elixirModuleDeclaration   "[^[:space:];#<]\+"	 contained contains=eli
 
 syn match elixirControl "\<def\>[?!]\@!"    nextgroup=elixirMethodDeclaration skipwhite skipnl
 syn match elixirControl "\<module\>[?!]\@!" nextgroup=elixirModuleDeclaration skipwhite skipnl
-syn match elixirControl "\<\%(case\|begin\|do\|for\|if\|unless\|while\|until\|else\|elsif\|ensure\|then\|when\|end\)\>[?!]\@!"
+syn match elixirControl "\<\%(case\|match\|begin\|do\|for\|if\|unless\|while\|until\|else\|elsif\|ensure\|then\|when\|end\)\>[?!]\@!"
 
 syn match elixirAttribute /^\s*@\%(vsn\|behaviour\|behavior\|compile\|overrideable\|spec\|callback\|type\|moduledoc\|doc\|on_load\)\s\+/
 
@@ -94,6 +94,7 @@ syn match elixirAtom                 /:\h[A-Za-z0-9?!_]*/
 
 hi link elixirHeredoc        String
 hi link elixirString         String
+hi link elixirStringModifier SpecialChar
 hi link elixirInteger        Number
 hi link elixirFloat          Float
 hi link elixirBoolean        Boolean
