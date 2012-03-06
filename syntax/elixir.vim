@@ -31,9 +31,8 @@ syn match elixirList                         /\[\|\]/
 syn keyword elixirType               float
 
 syn match Comment                    "#.*" contains=@Spell,erlangTodo
-syn keyword elixirKeyword            def defp defmacro end defmodule use
-"syn match Keyword                    /module .*$/
-"
+syn keyword elixirKeyword            def defp defmacro end defmodule use defrecord nextgroup=elixirFunction skipwhite
+
 syn match elixirChar                 /?\\\?./
 
 syn keyword elixirGuard is_atom is_binary is_bitstring is_boolean is_float is_function
@@ -106,7 +105,7 @@ hi link elixirMemberVariable Special
 hi link elixirPseudoVariable Constant
 
 hi link elixirErlang         Function
-hi link elixirKeyword        Define
+hi link elixirKeyword        Keyword
 hi link elixirBlankSlate     Structure
 
 hi link elixirComparator     Operator
