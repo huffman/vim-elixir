@@ -83,12 +83,12 @@ syn match elixirStringModifier       /\\./ contained
 syn match elixirStringModifier       /\~\%(-\?[0-9*]\+\)\?\%(\.[0-9*]\+\..\?\)\?\%(c\|f\|e\|g\|s\|w\|p\|W\|P\|B\|X\|#\|b\|+\|n\|i\)/ contained
 syn region elixirString              start=/"/ end=/"/ skip=/\\/ contains=@Spell,elixirStringModifier,elixirInterpolation
 
-syn match elixirAtom                 /'\h[A-Za-z0-9?!_]*/
-syn match elixirAtom                 /'".*"/
 syn region elixirHeredoc             start=/"""/ end=/^\s*"""/ skip=/\\/ contains=@Spell,elixirStringModifier,elixirInterpolation
 syn region elixirHeredoc             start=/'''/ end=/^\s*'''/ skip=/\\/ contains=@Spell,elixirStringModifier,elixirInterpolation
 
 syn match elixirModule  /\(::\)\?[A-Z][A-Za-z]*/
+
+syn match elixirAtom                 /:\h[A-Za-z0-9?!_]*/
 
 hi link elixirHeredoc        String
 hi link elixirString         String
