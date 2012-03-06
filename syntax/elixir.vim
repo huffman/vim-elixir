@@ -85,9 +85,12 @@ syn region elixirString              start=/"/ end=/"/ skip=/\\/ contains=@Spell
 
 syn match elixirAtom                 /'\h[A-Za-z0-9?!_]*/
 syn match elixirAtom                 /'".*"/
+syn region elixirHeredoc             start=/"""/ end=/^\s*"""/ skip=/\\/ contains=@Spell,elixirStringModifier,elixirInterpolation
+syn region elixirHeredoc             start=/'''/ end=/^\s*'''/ skip=/\\/ contains=@Spell,elixirStringModifier,elixirInterpolation
 
 syn match elixirModule  /\(::\)\?[A-Z][A-Za-z]*/
 
+hi link elixirHeredoc        String
 hi link elixirString         String
 hi link elixirInteger        Number
 hi link elixirFloat          Float
