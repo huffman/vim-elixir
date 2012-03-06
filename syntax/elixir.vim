@@ -36,6 +36,13 @@ syn keyword elixirKeyword            def defp defmacro end defmodule use
 "
 syn match elixirChar                 /?\\\?./
 
+syn keyword elixirGuard is_atom is_binary is_bitstring is_boolean is_float is_function
+syn keyword elixirGuard is_function is_integer is_list is_number is_pid is_port is_record
+syn keyword elixirGuard is_record is_reference is_tuple is_exception
+
+syn keyword elixirBuiltIn abs bit_size byte_size elem float hd length 
+syn keyword elixirBuiltIn node node round self size tl trunc tuple_size
+
 "syn keyword elixirConditional        case match else if elsif end
 "syn keyword elixirConditional        not and or andalso orelse
 "syn keyword elixirConditional        when
@@ -87,6 +94,9 @@ hi link elixirFloat          Float
 hi link elixirBoolean        Boolean
 hi link elixirAtom           Constant
 hi link elixirChar           Character
+
+hi link elixirGuard          Conditional
+hi link elixirBuiltIn        Function
 
 hi link elixirConditional    Conditional
 hi link elixirMemberVariable Special
