@@ -66,6 +66,7 @@ syn match  elixirModuleDeclaration   "[^[:space:];#<]\+"	 contained contains=eli
 syn match elixirControl "\<def\>[?!]\@!"    nextgroup=elixirMethodDeclaration skipwhite skipnl
 syn match elixirControl "\<module\>[?!]\@!" nextgroup=elixirModuleDeclaration skipwhite skipnl
 syn match elixirControl "\<\%(case\|begin\|do\|for\|if\|unless\|while\|until\|else\|elsif\|ensure\|then\|when\|end\)\>[?!]\@!"
+syn match elixirMacro /__\%(OP\|BLOCK\|KVBLOCK\|MODULE\|FILE\|LINE\|FUNCTION\|REF\)__/
 
 syn region elixirInterpolation          matchgroup=elixirInterpolationDelimiter start="#{" end="}" contained
 syn match  elixirInterpolation          "#\%(\$\|@@\=\)\w\+"    display contained contains=elixirInterpolationDelimiter,elixirInstanceVariable,elixirGlobalVariable,elixirPredefinedVariable
@@ -95,6 +96,8 @@ hi link elixirFloat          Float
 hi link elixirBoolean        Boolean
 hi link elixirAtom           Constant
 hi link elixirChar           Character
+
+hi link elixirMacro          Macro
 
 hi link elixirGuard          Conditional
 hi link elixirBuiltIn        Function
