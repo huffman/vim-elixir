@@ -67,8 +67,7 @@ syn match elixirControl "\<def\>[?!]\@!"    nextgroup=elixirMethodDeclaration sk
 syn match elixirControl "\<module\>[?!]\@!" nextgroup=elixirModuleDeclaration skipwhite skipnl
 syn match elixirControl "\<\%(case\|begin\|do\|for\|if\|unless\|while\|until\|else\|elsif\|ensure\|then\|when\|end\)\>[?!]\@!"
 
-" From ruby.vim
-syn region elixirInterpolation          matchgroup=elixirInterpolationDelimiter start="#{" end="}" contained contains=ALLBUT,@elixirNotTop
+syn region elixirInterpolation          matchgroup=elixirInterpolationDelimiter start="#{" end="}" contained
 syn match  elixirInterpolation          "#\%(\$\|@@\=\)\w\+"    display contained contains=elixirInterpolationDelimiter,elixirInstanceVariable,elixirGlobalVariable,elixirPredefinedVariable
 syn match  elixirInterpolationDelimiter "#\ze\%(\$\|@@\=\)\w\+" display contained
 syn match  elixirInterpolation          "#\$\%(-\w\|\W\)"       display contained contains=elixirInterpolationDelimiter,elixirPredefinedVariable,elixirInvalidVariable
