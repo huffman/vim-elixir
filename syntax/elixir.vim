@@ -24,8 +24,6 @@ syn match elixirInteger "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<0[bB][01]\+\%(_[01]\+
 syn match elixirFloat   "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<\%(0\|[1-9]\d*\%(_\d\+\)*\)\.\d\+\%(_\d\+\)*\>"					display
 syn match elixirFloat   "\%(\%(\w\|[]})\"']\s*\)\@<!-\)\=\<\%(0\|[1-9]\d*\%(_\d\+\)*\)\%(\.\d\+\%(_\d\+\)*\)\=\%([eE][-+]\=\d\+\%(_\d\+\)*\)\>"	display
 
-syn match elixirModule  /[A-Z][A-Za-z]*/
-
 syn match elixirTuple                        /{\|}/
 syn match elixirList                         /\[\|\]/
 
@@ -80,6 +78,8 @@ syn region elixirString              start=/"/ end=/"/ skip=/\\/ contains=@Spell
 
 syn match elixirAtom                 /'\h[A-Za-z0-9?!_]*/
 syn match elixirAtom                 /'".*"/
+
+syn match elixirModule  /\(::\)\?[A-Z][A-Za-z]*/
 
 hi link elixirString         String
 hi link elixirInteger        Number
