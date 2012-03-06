@@ -52,7 +52,7 @@ syn match elixirErlang               /\<Erlang\>/
 
 syn match elixirInstanceVariable     /@\h\w*/
 
-syn keyword elixirBoolean            true false 'true 'false
+syn keyword elixirBoolean            true false :true :false
 
 syn match  elixirMethodDeclaration   "[^[:space:];#(]\+"	 contained contains=elixirBoolean,elixirPseudoVariable,elixirInstanceVariable
 syn match  elixirModuleDeclaration   "[^[:space:];#<]\+"	 contained contains=elixirOperator
